@@ -3,8 +3,9 @@
 
   <%= simple_form_for @cocktail do |c| %>
     <%= c.input :name %>
+    <%= c.input :photo, as: :file %>
     <%= c.submit %>
   <% end %>
   <br>
-  <%= link_to "⬅️", root_path %>
+  <%= link_to "⬅️", cocktails_path %>
 </div>

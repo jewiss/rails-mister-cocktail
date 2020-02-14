@@ -2,13 +2,19 @@
   <h1>Cocktails list</h1>
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail), class:"link" do %>
-    <div class="card-trip">
-      <%= image_tag "https://source.unsplash.com/1600x900/?cocktail-#{cocktail.name}", alt: "alttext", class:"img" %>
-      <div class="card-trip-infos">
-          <h2><%= cocktail.name %></h2>
+      <div class="card-trip">
+        <div>
+          <% if cocktail.photo.attached? %>
+            <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill, class:"card-category img" %>
+          <% else %>
+            <%= image_tag "https://source.unsplash.com/1600x900/?cocktail-#{cocktail.name}", alt: "alttext", style:"background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2))", class:"card-category img" %>
+          <% end %>
+        </div>
+          <div class="card-trip-infos">
+            <h2><%= cocktail.name %></h2>
+          </div>
+       <% end %>
       </div>
-     <% end %>
-    </div>
   <% end %>
-  <%= link_to "➕ Add new cocktail", new_cocktail_path  %>
+    <%= link_to "➕ Add new cocktail", new_cocktail_path  %>
 </div>
