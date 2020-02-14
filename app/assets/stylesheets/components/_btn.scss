@@ -1,17 +1,20 @@
 .btn-ghost {
+  margin-top: 16px;
   color: white;
   padding: 8px 24px;
-  border-radius: 4px;
+  border-radius: 25px;
   font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
+  background: rgb(220,220,220);
   transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
-  left: 350px;
-  top: -8px;
+  left: 900px;
+  top: 100px;
   position: relative;
+  opacity: 1;
 }
 
 .btn-ghost:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
+  background: rgb(180,180,180);
   color: white;
+  opacity: 0.8;
+  font-style: italic;
 }
