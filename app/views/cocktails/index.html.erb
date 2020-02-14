@@ -1,15 +1,14 @@
 <div class="container">
   <h1>Cocktails list</h1>
-  <div class="card-trip">
-    <% @cocktails.each do |cocktail| %>
-    <%= image_tag "https://source.unsplash.com/1600x900/?cocktail-#{cocktail.name}", alt: "alttext", class:"img" %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= cocktail.name %></h2>
-        <p>Short description here!</p>
+  <% @cocktails.each do |cocktail| %>
+    <%= link_to cocktail_path(cocktail), class:"link" do %>
+    <div class="card-trip">
+      <%= image_tag "https://source.unsplash.com/1600x900/?cocktail-#{cocktail.name}", alt: "alttext", class:"img" %>
+      <div class="card-trip-infos">
+          <h2><%= cocktail.name %></h2>
       </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
+     <% end %>
     </div>
-    <% end %>
-  </div>
+  <% end %>
+  <%= link_to "➕ Add new cocktail", new_cocktail_path  %>
 </div>
